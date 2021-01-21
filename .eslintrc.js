@@ -3,15 +3,18 @@ module.exports = {
   env: {
     node: true
   },
-  extends: [
-    'plugin:vue/essential',
-    '@vue/standard'
-  ],
+  extends: ['plugin:vue/essential', '@vue/standard'],
   parserOptions: {
     parser: 'babel-eslint'
   },
   rules: {
+    // 值为0，不检查函数名和参数列表的左括号之间必须有空格
+    'space-before-function-paren': 0,
+    // 不检查单双引号
+    singleQuote: 0,
+    // 设置为函数语句局末必须有分号,否则报错
+    semi: ['error', 'always'],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
   }
-}
+};
