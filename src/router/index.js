@@ -4,6 +4,7 @@ import Home from '../components/Home.vue';
 // 导入自定义指令组件
 import Dir from '../components/directive/Dir.vue';
 import Life from '../components/life/LifeCircle.vue';
+import Pack from '../components/ajaxPack/AjaxPack.vue';
 
 Vue.use(VueRouter);
 
@@ -20,6 +21,10 @@ const routes = [
       {
         path: '/home/life',
         component: Life
+      },
+      {
+        path: '/home/ajax_pack',
+        component: Pack
       }
     ]
   }
