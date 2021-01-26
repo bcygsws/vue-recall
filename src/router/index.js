@@ -5,6 +5,8 @@ import Home from '../components/Home.vue';
 import Dir from '../components/directive/Dir.vue';
 import Life from '../components/life/LifeCircle.vue';
 import Pack from '../components/ajaxPack/AjaxPack.vue';
+import Axios from '../components/axiopack/AxiosPack.vue';
+import CancelRequest from '../components/cancelrequest/CancelRequest.vue';
 
 Vue.use(VueRouter);
 
@@ -25,6 +27,14 @@ const routes = [
       {
         path: '/home/ajax_pack',
         component: Pack
+      },
+      {
+        path: '/home/axios_pack',
+        component: Axios
+      },
+      {
+        path: '/home/cancel_request',
+        component: CancelRequest
       }
     ]
   }

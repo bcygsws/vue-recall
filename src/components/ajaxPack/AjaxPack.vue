@@ -48,12 +48,18 @@ export default {
     //     xhr.send(null);
     //   } else if (options.type === 'POST') {
     //     // post请求还需要设置请求头
-    //     xhr.setRequest('Content-Type', 'application/x-www-form-urlencoded');
+    //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     //     xhr.open(options.type, options.url, options.async);
     //     // 发送请求
     //     xhr.send(params);
     //   }
     //   // 4.对响应作出判断
+    /* readyState的取值：
+    0：请求未初始化
+    1：服务器连接请求建立
+    2：请求已接收
+    3:请求处理中
+    4：请求已经完成，且响应已经就绪 */
     //   xhr.onreadystatechange = function() {
     //     if (xhr.readyState === 4) {
     //       if (xhr.status === 200) {
