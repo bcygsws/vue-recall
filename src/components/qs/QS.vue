@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     // 对象转化成字符串
-    // 注意：JSON.stringify和qs.stringify的区别   https://www.cnblogs.com/web1/p/8659398.html
+    // 注意：JSON.stringify和qs.stringify的区别  https://www.cnblogs.com/web1/p/8659398.html
     transObjToStr() {
       console.log(qs.stringify(this.msg)); // a%5Bb%5D=c
       console.log(JSON.stringify(this.pro)); // JSON字符串 {"d":"e","f":"g"}
