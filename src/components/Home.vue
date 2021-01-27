@@ -6,6 +6,7 @@
     <router-link to="/home/ajax_pack">ajax的封装，封装post和get方式</router-link>
     <router-link to="/home/axios_pack">axios的二次封装，封装post和get方式</router-link>
     <router-link to="/home/cancel_request">axios取消请求</router-link>
+    <router-link to="/home/qs">qs的使用</router-link>
     <router-view></router-view>
   </div>
 </template>

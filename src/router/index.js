@@ -7,6 +7,7 @@ import Life from '../components/life/LifeCircle.vue';
 import Pack from '../components/ajaxPack/AjaxPack.vue';
 import Axios from '../components/axiopack/AxiosPack.vue';
 import CancelRequest from '../components/cancelrequest/CancelRequest.vue';
+import QS from '../components/qs/QS.vue';
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,10 @@ const routes = [
       {
         path: '/home/cancel_request',
         component: CancelRequest
+      },
+      {
+        path: '/home/qs',
+        component: QS
       }
     ]
   }
