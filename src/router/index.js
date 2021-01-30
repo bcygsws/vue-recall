@@ -8,6 +8,7 @@ import Pack from '../components/ajaxPack/AjaxPack.vue';
 import Axios from '../components/axiopack/AxiosPack.vue';
 import CancelRequest from '../components/cancelrequest/CancelRequest.vue';
 import QS from '../components/qs/QS.vue';
+import KeepAlive from '../components/keepalive/KeepAlive.vue';
 
 Vue.use(VueRouter);
 
@@ -40,6 +41,10 @@ const routes = [
       {
         path: '/home/qs',
         component: QS
+      },
+      {
+        path: '/home/keep_alive',
+        component: KeepAlive
       }
     ]
   }
