@@ -1,5 +1,6 @@
 <template>
   <div>
+<<<<<<< HEAD
     <p>{{ msg }}</p>
   </div>
 </template>
@@ -12,3 +13,9 @@ export default {
   }
 };
 </script>
+=======
+    <h3>这是coma子组件</h3>
+    <input type="text" name="coma">
+  </div>
+</template>
+>>>>>>> keepalive
