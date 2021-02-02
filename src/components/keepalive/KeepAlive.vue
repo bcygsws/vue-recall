@@ -10,7 +10,8 @@ export default {
     return {};
   },
   methods: {
-    /* location:{
+    /* Nginx反向代理location配置 
+    location {
         = 严格匹配，如果location到这个请求，立即停止搜索并处理请求
         ~ 区分大小写匹配
         ~* 不区分大小写匹配
