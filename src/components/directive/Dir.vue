@@ -30,7 +30,7 @@ export default {
       },
       componentUpdated: function(el, binding) {},
       // 指令解绑时执行
-      // 只执行一次
+      // 这个钩子只执行一次
       unbind: function(el, binding) {}
     }
   },
