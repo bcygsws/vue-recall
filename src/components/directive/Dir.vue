@@ -16,7 +16,9 @@ export default {
     color: {
       // 绑定指令的元素被插入父元素时调用---相当于初始化显示红色文本
       // 钩子只执行一次
+      // 打印 {name: "color", rawName: "v-color", value: "red", expression: "color", modifiers: {…}, …}
       inserted: function(el, binding) {
+        console.log(binding);
         el.style.color = binding.value;
       },
       // bind钩子，表示指令第一次被绑定到元素时执行
@@ -28,6 +30,7 @@ export default {
       update: function(el, binding) {
         el.style.color = binding.value;
       },
+      // 指令的所有Vnode和子Vnode更新时调用
       componentUpdated: function(el, binding) {},
       // 指令解绑时执行
       // 只执行一次
