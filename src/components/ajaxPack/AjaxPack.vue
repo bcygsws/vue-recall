@@ -23,6 +23,7 @@ export default {
         }
       }); */
     formParams(data) {
+      // qs模块的stringify方法可以讲对象{a:"x",b:"y"}拼接成查询字符串的形式a=x&b=y
       // 定义空数组的目的是，使用其join()方法，参数（或发送数据）连接成查询字符串
       var arr = [];
       for (var key in data) {
@@ -55,6 +56,7 @@ export default {
     //   }
     //   // 4.对响应作出判断
     /* readyState的取值：
+      记忆 未 建 接 处理 完成 
     0：请求未初始化
     1：服务器连接请求建立
     2：请求已接收
