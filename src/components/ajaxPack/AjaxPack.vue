@@ -64,6 +64,12 @@ export default {
     4：请求已经完成，且响应已经就绪 */
     //   xhr.onreadystatechange = function() {
     //     if (xhr.readyState === 4) {
+    /* status状态码 
+      1xx:临时请求
+      2xx：请求成功
+      3xx:请求已重定向
+      4xx:请求错误
+      5xx:服务器错误 */
     //       if (xhr.status === 200) {
     //         options.success(xhr.responseText);
     //       }
