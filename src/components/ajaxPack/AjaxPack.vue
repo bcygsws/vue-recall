@@ -52,7 +52,7 @@ export default {
     //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     //     xhr.open(options.type, options.url, options.async);
     //     // 发送请求
-    //     xhr.send(params);
+    //     xhr.send(params);-
     //   }
     //   // 4.对响应作出判断
     /* readyState的取值：
