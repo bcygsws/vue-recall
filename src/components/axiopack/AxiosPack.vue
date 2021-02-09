@@ -44,6 +44,25 @@ export default {
      }
    }
    */
+    /* axios取消请求
+    参考链接：https://www.jianshu.com/p/d771bbc61dab
+  var CancelToken=axios.CancelToken;
+  var source=CancelToken.source();
+  // 中断请求token对象{cancelToken:source.token}的位置：get请求对象在第二个参数，post请求对象在第三个参数
+  axios.get('api/getData',{
+    cancelToken:source.token
+  }).then(res=>{
+    console.log(res);
+  }).
+  catch(error){
+    // 判断异常对象是取消原因对象？如果是，cancel方法中字符就传递给error
+      if(axios.isCancel(error){
+          console.log('请求取消'+error. message);
+      })
+  }
+    source.cancel("请求已被用户主动中断~");
+
+  */
   }
 };
 </script>
