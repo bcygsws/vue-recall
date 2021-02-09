@@ -7,7 +7,8 @@
 export default {
   data() {
     return {
-      msg: ''
+      msg: '',
+      tabLeData: ''
     };
   },
   methods: {
@@ -33,6 +34,16 @@ export default {
       console.log(data);
     })
     */
+    /* axios代码同步处理async……await
+   async function getData(){
+     try{
+        let res=axios.get('api/some/data',{params:{data:6}});
+        this.tableData=res.data.result;
+     }catch(error){
+       console.log("错误"+error);
+     }
+   }
+   */
   }
 };
 </script>
