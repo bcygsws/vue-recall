@@ -8,6 +8,7 @@
     <router-link to="/home/cancel_request">axios取消请求</router-link>
     <router-link to="/home/qs">qs的使用</router-link>
     <router-link to="/home/keep_alive">keep-alive缓存组件的使用</router-link>
+    <router-link to="/home/vue_cross">vue跨域的使用fetch和axios</router-link>
     <router-view></router-view>
   </div>
 </template>

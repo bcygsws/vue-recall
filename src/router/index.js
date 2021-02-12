@@ -9,6 +9,7 @@ import Axios from '../components/axiopack/AxiosPack.vue';
 import CancelRequest from '../components/cancelrequest/CancelRequest.vue';
 import QS from '../components/qs/QS.vue';
 import KeepAlive from '../components/keepalive/KeepAlive.vue';
+import VueCross from '../components/vuecross/VueCross.vue';
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,10 @@ const routes = [
       {
         path: '/home/keep_alive',
         component: KeepAlive
+      },
+      {
+        path: '/home/vue_cross',
+        component: VueCross
       }
     ]
   }
