@@ -10,6 +10,7 @@ import CancelRequest from '../components/cancelrequest/CancelRequest.vue';
 import QS from '../components/qs/QS.vue';
 import KeepAlive from '../components/keepalive/KeepAlive.vue';
 import VueCross from '../components/vuecross/VueCross.vue';
+import ApiCross from '../components/api/ApiCross.vue';
 
 Vue.use(VueRouter);
 
@@ -50,7 +51,8 @@ const routes = [
       {
         path: '/home/vue_cross',
         component: VueCross
-      }
+      },
+      { path: '/home/api_cross', component: ApiCross }
     ]
   }
 ];
