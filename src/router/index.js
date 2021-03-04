@@ -11,6 +11,8 @@ import QS from '../components/qs/QS.vue';
 import KeepAlive from '../components/keepalive/KeepAlive.vue';
 import VueCross from '../components/vuecross/VueCross.vue';
 import ApiCross from '../components/api/ApiCross.vue';
+import Table from '../components/api/Table.vue';
+import ElTable from '../components/api/ElTable.vue';
 
 Vue.use(VueRouter);
 
@@ -52,7 +54,14 @@ const routes = [
         path: '/home/vue_cross',
         component: VueCross
       },
-      { path: '/home/api_cross', component: ApiCross }
+      {
+        path: '/home/api_cross',
+        component: ApiCross,
+        children: [
+          { path: '/home/api_cross/table', component: Table },
+          { path: '/home/api_cross/el_table', component: ElTable }
+        ]
+      }
     ]
   }
 ];
