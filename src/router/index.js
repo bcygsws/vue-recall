@@ -13,6 +13,7 @@ import VueCross from '../components/vuecross/VueCross.vue';
 import ApiCross from '../components/api/ApiCross.vue';
 import Table from '../components/api/Table.vue';
 import ElTable from '../components/api/ElTable.vue';
+import Slot from '../components/slot/Slot.vue';
 
 Vue.use(VueRouter);
 
@@ -61,6 +62,10 @@ const routes = [
           { path: '/home/api_cross/table', component: Table },
           { path: '/home/api_cross/el_table', component: ElTable }
         ]
+      },
+      {
+        path: '/home/slot',
+        component: Slot
       }
     ]
   }
