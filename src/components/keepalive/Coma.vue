@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>这是coma子组件</h3>
+    <span>coma子组件:</span>
     <input type="text" name="coma">
   </div>
 </template>
