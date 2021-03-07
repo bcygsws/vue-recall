@@ -5,7 +5,8 @@
     显示在子组件slot标签位置上的，slot标签里如果声明name="flag"属性，还要同父组件中<child slot="flag"></child>对应。插槽分析过程：
     1.将将父组件中嵌入子组件标签处，内容拿出来
     2.父组件中child子标签整体置换成子组件模板
-    3.将原本从父组件中拿出来那部分html片段，置换掉<slot></slot>标签-->
+    3.将原本从父组件中拿出来那部分html片段，置换掉<slot></slot>标签
+    4.对于具名从插槽，父组件中标签处格式：<child><template slot="name"></template></child>-->
     <child>
       <template slot-scope="user">
         {{ user.data }}
@@ -19,10 +20,16 @@
     <child>
       <template slot-scope="user1">{{ user1.data }}</template>
     </child>
+    <child1>
+      <template slot="son">
+        <div>有限光阴过隙，无情日月飞梭。春花秋月暗消磨，相看一年又过。节选自张抡-《西江月》</div>
+      </template>
+    </child1>
   </div>
 </template>
 <script>
 import Child from './Child.vue';
+import Child1 from './Child1.vue';
 export default {
   data() {
     return {
@@ -31,7 +38,8 @@ export default {
   },
   components: {
     // 键是作为子标签，值为引入的子组件名称
-    child: Child
+    child: Child,
+    child1: Child1
   }
 };
 </script>

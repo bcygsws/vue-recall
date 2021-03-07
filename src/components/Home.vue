@@ -11,6 +11,7 @@
     <router-link to="/home/vue_cross">vue跨域的使用fetch和axios</router-link>
     <router-link to="/home/api_cross">数据接口的跨域</router-link>
     <router-link to="/home/slot">插槽的概念理解</router-link>
+    <router-link to="/home/lazy">vue文件按需引入-路由懒加载的使用</router-link>
     <router-view></router-view>
   </div>
 </template>
