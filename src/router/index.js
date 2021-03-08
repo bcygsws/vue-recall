@@ -77,7 +77,9 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
+  // 设置该属性后，路由router-link点击后，active-class将代替路由默认生成的router-link-active
+  linkActiveClass: 'active-class'
 });
 
 export default router;
