@@ -15,6 +15,7 @@ import Table from '../components/api/Table.vue';
 import ElTable from '../components/api/ElTable.vue';
 import Slot from '../components/slot/Slot.vue';
 import Lazy from '../components/importbyneed/ImportLazy.vue';
+import KeyProp from '../components/keyprop/KeyProp.vue';
 
 Vue.use(VueRouter);
 
@@ -71,6 +72,10 @@ const routes = [
       {
         path: '/home/lazy',
         component: Lazy
+      },
+      {
+        path: '/home/key_prop',
+        component: KeyProp
       }
     ]
   }
