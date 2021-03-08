@@ -16,6 +16,8 @@ module.exports = {
     'no-irregular-whitespace': 'off',
     // 设置为函数语句局末必须有分号,否则报错
     semi: ['error', 'always'],
+    // 一行结束后不能有空格,关闭
+    'no-trailing-spaces': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
   }
