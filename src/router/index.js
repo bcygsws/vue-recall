@@ -19,6 +19,7 @@ import KeyProp from '../components/keyprop/KeyProp.vue';
 import CompWatch from '../components/compwatch/CompWatch.vue';
 import Watch from '../components/compwatch/Watch.vue';
 import Comp from '../components/compwatch/Computed.vue';
+import Filter from '../components/filter/Filter.vue';
 
 Vue.use(VueRouter);
 
@@ -87,6 +88,10 @@ const routes = [
           { path: '/home/comp_watch/watch', component: Watch },
           { path: '/home/comp_watch/computed', component: Comp }
         ]
+      },
+      {
+        path: '/home/filter',
+        component: Filter
       }
     ]
   }
