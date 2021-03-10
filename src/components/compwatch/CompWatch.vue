@@ -7,6 +7,9 @@
 </template>
 <script>
 export default {
+  created() {
+    console.log(window.location.hash);// #/home/comp_watch  在浏览器中，#及其后面的内容被称为hash
+  },
   watch: {
     '$route.path': function(newVal) {
       if (newVal === '/home/comp_watch/watch') {
