@@ -16,6 +16,9 @@ import ElTable from '../components/api/ElTable.vue';
 import Slot from '../components/slot/Slot.vue';
 import Lazy from '../components/importbyneed/ImportLazy.vue';
 import KeyProp from '../components/keyprop/KeyProp.vue';
+import CompWatch from '../components/compwatch/CompWatch.vue';
+import Watch from '../components/compwatch/Watch.vue';
+import Comp from '../components/compwatch/Computed.vue';
 
 Vue.use(VueRouter);
 
@@ -76,6 +79,14 @@ const routes = [
       {
         path: '/home/key_prop',
         component: KeyProp
+      },
+      {
+        path: '/home/comp_watch',
+        component: CompWatch,
+        children: [
+          { path: '/home/comp_watch/watch', component: Watch },
+          { path: '/home/comp_watch/computed', component: Comp }
+        ]
       }
     ]
   }

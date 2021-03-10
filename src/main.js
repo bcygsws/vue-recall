@@ -8,7 +8,9 @@ Vue.prototype.$http = axios;
 axios.defaults.baseURL = 'http://localhost:3000/';
 Vue.config.productionTip = false;
 
-new Vue({
+const vm = new Vue({
   router,
   render: h => h(App)
 }).$mount('#app');
+console.log(vm);
+console.log(vm.$route.path);

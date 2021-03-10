@@ -13,6 +13,7 @@
     <router-link to="/home/slot">插槽的概念理解</router-link>
     <router-link to="/home/lazy">vue文件按需引入-路由懒加载的使用</router-link>
     <router-link to="/home/key_prop">v-for循环中必须v-bind:key关键字的原因</router-link>
+    <router-link to="/home/comp_watch">计算和侦听属性computed、watch的区别</router-link>
     <router-view></router-view>
   </div>
 </template>
