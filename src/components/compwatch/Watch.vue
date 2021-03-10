@@ -7,6 +7,7 @@
 </template>
 <script>
 /**
+ * 参考文档：https://www.cnblogs.com/jiajialove/p/11327945.html
  * computed的使用：
  * 1.computed 多用于一个属性是其他属性计算而来的，这个属性依赖于其他属性，是多对一或一对一的情形
  * 2.支持缓存，依赖的属性发生变化，才会重新计算属性
