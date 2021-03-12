@@ -20,6 +20,7 @@ import CompWatch from '../components/compwatch/CompWatch.vue';
 import Watch from '../components/compwatch/Watch.vue';
 import Comp from '../components/compwatch/Computed.vue';
 import Filter from '../components/filter/Filter.vue';
+import ClassConfig from '../components/classconfig/ClassConfig.vue';
 
 Vue.use(VueRouter);
 
@@ -92,6 +93,10 @@ const routes = [
       {
         path: '/home/filter',
         component: Filter
+      },
+      {
+        path: '/home/class_config',
+        component: ClassConfig
       }
     ]
   }

@@ -15,6 +15,7 @@
     <router-link to="/home/key_prop">v-for循环中必须v-bind:key关键字的原因</router-link>
     <router-link to="/home/comp_watch">计算和侦听属性computed、watch的区别</router-link>
     <router-link to="/home/filter">自定义过滤器</router-link>
+    <router-link to="/home/class_config">动态绑定class的6种方式</router-link>
     <router-view></router-view>
   </div>
 </template>
