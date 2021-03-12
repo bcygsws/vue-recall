@@ -15,14 +15,36 @@
     <router-link to="/home/key_prop">v-for循环中必须v-bind:key关键字的原因</router-link>
     <router-link to="/home/comp_watch">计算和侦听属性computed、watch的区别</router-link>
     <router-link to="/home/filter">自定义过滤器</router-link>
-    <router-link to="/home/class_config">动态绑定class的6种方式</router-link>
+    <!-- VUE2中注册在router-link上的事件无效的解决办法？加一个原生修饰符.native可以解决在router-link上注册事件无效的问题 -->
+    <router-link @mouseover.native="changeStyle" @mouseleave.native="changeClass" :class="[isActive ? 'active' : '']" to="/home/class_config">动态绑定class的6种方式</router-link>
     <router-view></router-view>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      isActive: false
+    };
+  },
+  methods: {
+    changeStyle() {
+      this.isActive = true;
+    },
+    changeClass() {
+      this.isActive = false;
+    }
+  }
+};
+</script>
 <style lang="less" scoped>
 .home_container {
   a {
     margin-left: 20px;
+  }
+  .active {
+    color: greenyellow;
+    font-size: 24px;
   }
 }
 </style>
