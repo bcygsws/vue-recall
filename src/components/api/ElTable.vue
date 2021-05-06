@@ -3,6 +3,7 @@
     <h3>api接口的跨域<a href="javascript:;" @click="showLog">添加图书</a></h3>
     <!-- 使用el-table -->
     <el-table :data="tbData" border stripe style="width: 100%">
+      <!-- type="index" 表示记录序号列，序号默认从1开始 -->
       <el-table-column type="index" label="序号" width="80"> </el-table-column>
       <el-table-column prop="id" label="ID" width="80" order> </el-table-column>
       <el-table-column prop="name" label="书名" width="180"> </el-table-column>
@@ -193,5 +194,4 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>
