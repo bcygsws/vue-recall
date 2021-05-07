@@ -61,6 +61,17 @@
         <el-button type="primary" @click="editBook">确 定</el-button>
       </span>
     </el-dialog>
+    <!-- 分页操作 -->
+    <el-pagination
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page="pageNum"
+      :page-sizes="[5, 10, 15, 20, 50]"
+      :page-size="size"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="total"
+    >
+    </el-pagination>
   </div>
 </template>
 <script>
@@ -120,7 +131,15 @@ export default {
           name: '王小虎',
           address: '上海市普陀区金沙江路 1516 弄'
         }
-      ]
+      ],
+      // 定义info对象，存储总页数、每页数据条数
+      info: {
+        total: '',
+        // 每页容量最多5条
+        size: 5,
+        // 默认值：表示数据初始化渲染时，位于第一页
+        pageNum: 1
+      }
     };
   },
   methods: {
@@ -187,6 +206,15 @@ export default {
       console.log(res);
       // 重新刷新列表
       this.getBooks();
+    },
+    // 处理表容量和当前页数据
+    handleSizeChange(val) {
+      console.log(val);
+      this.size = val;
+    },
+    handleCurrentChange(val) {
+      this.pageNum = val;
+      console.log(val);
     }
   },
   created() {
