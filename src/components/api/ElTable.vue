@@ -3,6 +3,7 @@
     <h3>api接口的跨域<a href="javascript:;" @click="showLog">添加图书</a></h3>
     <!-- 使用el-table -->
     <el-table :data="tbData" border stripe style="width: 100%">
+      <!-- type="index" 表示记录序号列，序号默认从1开始 -->
       <el-table-column type="index" label="序号" width="80"> </el-table-column>
       <el-table-column prop="id" label="ID" width="80" order> </el-table-column>
       <el-table-column prop="name" label="书名" width="180"> </el-table-column>
@@ -60,6 +61,17 @@
         <el-button type="primary" @click="editBook">确 定</el-button>
       </span>
     </el-dialog>
+    <!-- 分页操作 -->
+    <el-pagination
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page="pageNum"
+      :page-sizes="[5, 10, 15, 20, 50]"
+      :page-size="size"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="total"
+    >
+    </el-pagination>
   </div>
 </template>
 <script>
@@ -98,38 +110,26 @@ export default {
         ]
       },
       tbData: [],
-      tableData: [
-        {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        },
-        {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },
-        {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        },
-        {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }
-      ]
+      // 定义info对象，存储总页数、每页数据条数
+      total: 0,
+      // 每页容量最多5条
+      size: 5,
+      // 默认值：表示数据初始化渲染时，位于第一页
+      pageNum: 1
     };
+  },
+  created() {
+    this.getBooks();
   },
   methods: {
     // 获取所有图书信息
     async getBooks() {
-      const res = await this.$http.get('books');
+      const res = await this.$http.get(`books/${this.size}/pages/${this.pageNum}`);
+      console.log(res);
       if (res.status === 200) {
         // el-table使用
-        this.tbData = res.data;
-        console.log(this.tbData);
+        this.tbData = res.data.list;
+        this.total = res.data.total;
       }
     },
     showLog() {
@@ -186,12 +186,21 @@ export default {
       console.log(res);
       // 重新刷新列表
       this.getBooks();
+    },
+    // 处理表容量和当前页数据
+    handleSizeChange(val) {
+      console.log(val);
+      this.size = val;
+      // 每页容量改变，重新刷新列表
+      this.getBooks();
+    },
+    handleCurrentChange(val) {
+      this.pageNum = val;
+      console.log(val);
+      // 页面切换，重新刷新列表
+      this.getBooks();
     }
-  },
-  created() {
-    this.getBooks();
   }
 };
 </script>
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>
