@@ -110,46 +110,26 @@ export default {
         ]
       },
       tbData: [],
-      tableData: [
-        {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        },
-        {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        },
-        {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        },
-        {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }
-      ],
       // 定义info对象，存储总页数、每页数据条数
-      info: {
-        total: '',
-        // 每页容量最多5条
-        size: 5,
-        // 默认值：表示数据初始化渲染时，位于第一页
-        pageNum: 1
-      }
+      total: 0,
+      // 每页容量最多5条
+      size: 5,
+      // 默认值：表示数据初始化渲染时，位于第一页
+      pageNum: 1
     };
+  },
+  created() {
+    this.getBooks();
   },
   methods: {
     // 获取所有图书信息
     async getBooks() {
-      const res = await this.$http.get('books');
+      const res = await this.$http.get(`books/${this.size}/pages/${this.pageNum}`);
+      console.log(res);
       if (res.status === 200) {
         // el-table使用
-        this.tbData = res.data;
-        console.log(this.tbData);
+        this.tbData = res.data.list;
+        this.total = res.data.total;
       }
     },
     showLog() {
@@ -211,14 +191,15 @@ export default {
     handleSizeChange(val) {
       console.log(val);
       this.size = val;
+      // 每页容量改变，重新刷新列表
+      this.getBooks();
     },
     handleCurrentChange(val) {
       this.pageNum = val;
       console.log(val);
+      // 页面切换，重新刷新列表
+      this.getBooks();
     }
-  },
-  created() {
-    this.getBooks();
   }
 };
 </script>
