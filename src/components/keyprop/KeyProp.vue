@@ -1,16 +1,18 @@
 <template>
   <div class="key_container">
     <h3>这是keyprop子组件</h3>
-    id:<input type="text" name="id" id="id" v-model="id" /> name:<input type="text" name="name" id="name" v-model="name" />
+    id:
+    <input type="text" name="id" id="id" v-model="id" />
+    name:
+    <input type="text" name="name" id="name" v-model="name" />
     <input type="button" value="添加数据" @click="add" />
     <ul>
-      <li>
-        <div class="checkbox" v-for="(item, index) in list" :key="item.id">
+      <li class="checkbox" v-for="item in list" :key="item.id">
           <label>
             <input type="checkbox" value="" />
-            {{ index }}---{{ item.name }}
+            {{ item.id }}---{{ item.name }}
           </label>
-        </div>
+          <a href="javascript:;" @click="deleteRow">删除</a>
       </li>
     </ul>
   </div>
@@ -30,13 +32,7 @@
 export default {
   data() {
     return {
-      list: [
-        { id: 1, name: '项羽' },
-        { id: 2, name: '韩信' },
-        { id: 3, name: '张良' },
-        { id: 4, name: '刘邦' },
-        { id: 5, name: '樊哙' }
-      ],
+      list: [{ id: 1, name: '项羽' }, { id: 2, name: '韩信' }, { id: 3, name: '张良' }, { id: 4, name: '刘邦' }, { id: 5, name: '樊哙' }],
       id: '',
       name: ''
     };
@@ -44,7 +40,8 @@ export default {
   methods: {
     add() {
       this.list.unshift({ id: this.id, name: this.name });
-    }
+    },
+    deleteRow() {}
   }
 };
 </script>
