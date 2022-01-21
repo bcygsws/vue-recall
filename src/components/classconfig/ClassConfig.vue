@@ -11,6 +11,8 @@
     <p :class="['active4', 'act-array']">有限光阴过隙，无情日月飞梭</p>
     <!-- 方式5：数组和三元表达式 -->
     <p :class="[isActive1 ? 'active5' : 'array-style']">我愿如星君如月，夜夜流光相皎洁</p>
+    <!-- 方式6：数组和对象结合的方式 -->
+    <p :class="['active4', { active6: true }]">有限光阴过隙，无情日月飞梭</p>
   </div>
 </template>
 <script>
@@ -57,6 +59,12 @@ export default {
   }
   .array-style {
     color: purple;
+  }
+
+  .active6 {
+    background-color: black;
+    font-size: 30px;
+    text-decoration: line-through;
   }
 }
 </style>
