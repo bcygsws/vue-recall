@@ -1,7 +1,10 @@
 <template>
   <div>
     <h3>侦听属性watch-实现姓名拼接</h3>
-    <input type="text" name="first" v-model="firstName" />+ <input type="text" name="last" v-model="lastName" />=
+    <input type="text" name="first" v-model="firstName" />
+    +
+    <input type="text" name="last" v-model="lastName" />
+    =
     <input type="text" name="total" v-model="total" />
   </div>
 </template>
