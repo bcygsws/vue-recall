@@ -150,8 +150,7 @@ export default {
       this.$message.success('成功获取1条数据');
       console.log(res);
       // res.data得到是一个对象数据
-      /* 
-       1.data中每条数据都有id,因此。this.editForm对象实际上在赋值过程中，会增加id这个字段，
+      /* 1.data中每条数据都有id,因此。this.editForm对象实际上在赋值过程中，会增加id这个字段，
       即使data方法中editForm默认没有定义id字段
       2.editForm对象是双向绑定的，打开对话框，修改数据前，editForm拿到原数据对象。在对话框中
       提交修改后(editBook方法执行时)，editForm会跟随数据的变化。(el-input中使用动态绑定v-model了)

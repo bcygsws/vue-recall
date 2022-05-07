@@ -55,8 +55,7 @@ export default {
     //     xhr.send(params);-
     //   }
     //   // 4.对响应作出判断
-    /* readyState的取值：
-    记忆,未,建,接,处理,完成 
+    /* readyState的取值：记忆,未,建,接,处理,完成
     0：请求未初始化
     1：服务器连接请求建立
     2：请求已接收
@@ -64,7 +63,7 @@ export default {
     4：请求已经完成，且响应已经就绪 */
     //   xhr.onreadystatechange = function() {
     //     if (xhr.readyState === 4) {
-    /* status状态码 
+    /* status状态码
       1xx:临时请求
       2xx：请求成功
       3xx:请求已重定向

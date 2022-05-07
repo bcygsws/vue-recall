@@ -142,10 +142,10 @@ export default {
         console.log(this.ruleForm);
         // 表单验证成功，向后台发送post请求
         const res = await this.$http.post('books/book', this.ruleForm);
+        console.log(res);
         if (res.status === 200) {
           this.$message.success('成功添加1条图书信息');
         }
-        console.log(res);
         this.dialogVisible = false;
         // 重新获取图书列表
         this.getBooks();
